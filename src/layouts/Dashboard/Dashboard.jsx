@@ -30,8 +30,9 @@ class Dashboard extends React.Component {
   }
   render() {
     return (
+      
       <div className="wrapper">
-        <div ref="mainPanel">
+      <div ref="mainPanel">
        
         <Header {...this.props} routes={dashboardRoutes} />
           <Switch>

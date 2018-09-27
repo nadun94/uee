@@ -1,9 +1,9 @@
 import Home from "views/Home/Home.jsx";
-import flights from "../views/supervisor-i5/Supervisor_i5";
-import stureg from "../views/StudentReg/Studentreg.jsx";
+import flights from "../views/Flights/Flights";
+import Hotels from "../views/Hotels/Hotels.jsx";
 
 import Vacations from "../views/Vacations/Vactions.jsx";
-import Diaryview from "../views/Diaryview/Diaryview.jsx";
+import Cruises from "../views/Cruises/Cruises.jsx";
 import Cars from "../views/Cars/Cars";
 
 var dashRoutes = [
@@ -21,7 +21,7 @@ var dashRoutes = [
     path: "/hotels",
     name: "Hotels",
     icon: "education_paper",
-    component: stureg
+    component: Hotels
   },
 
   {
@@ -34,7 +34,7 @@ var dashRoutes = [
     path: "/cruises",
     name: "Cruises",
     icon: "files_paper",
-    component:  Diaryview
+    component:  Cruises
   },
   {
     path: "/cars",
@@ -43,6 +43,6 @@ var dashRoutes = [
     component: Cars
   },
  
-  { redirect: true, path: "/", pathTo: "/home", name: "Dashboard" }
+  { redirect: true, path: "/", pathTo: "/home", name: "Home" }
 ];
 export default dashRoutes;

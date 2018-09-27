@@ -16,8 +16,6 @@ import Header from './Header/Header';
 
 import PanelHeader from './PanelHeader/PanelHeader';
 
-import Sidebar from './Sidebar/Sidebar';
-
 import Stats from './Stats/Stats';
 
 import Tasks from './Tasks/Tasks';
@@ -41,8 +39,6 @@ export {
     Header,
     // PanelHeader
     PanelHeader,
-    // Sidebar
-    Sidebar,
     // Stats
     Stats,
     // Tasks

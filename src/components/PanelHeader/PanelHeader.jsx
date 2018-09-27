@@ -5,9 +5,9 @@ class PanelHeader extends React.Component {
     return (
       <div
         className={
-          "panel-header " +
+          " " +
           (this.props.size !== undefined
-            ? "panel-header-" + this.props.size
+            ? "" + this.props.size
             : "")
         }
       >
