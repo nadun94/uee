@@ -32,11 +32,23 @@ import car2 from '../../assets/img/car2.png';
 import star4 from '../../assets/img/4star.png';
 
 
-import { Slide } from 'react-slideshow-image';
-import slide1 from './images/1.jpg';
-import slide2 from './images/p.png';
-import slide3 from './images/s.jpg';
+import  {Slide}  from 'react-slideshow-image';
+import n1 from '../../assets/img/n1.jpg';
+import n2 from '../../assets/img/n2.jpg';
+import n3 from '../../assets/img/n3.jpg';
 import { PanelHeader, FormInputs } from "components";
+
+const slideImages = [
+  n1, n2, n3
+];
+const properties = {
+  duration: 5000,
+  transitionDuration: 500,
+  infinite: true,
+  indicators: true,
+  strech:true
+ 
+}
 class Cars extends React.Component {
 
   constructor(props) {
@@ -87,35 +99,40 @@ class Cars extends React.Component {
   }
   //render start******************************************************
   render() {
+
     return (
       <div>
         {/* <PanelHeader size="sm" /> */}
         <div className="container-fluid">
           <Row>
             <Col md={12} xs={12}>
-              <div id="slide" >
-                <Slide {...properties}>
+       <Card>
+       <div id="slide1">
+      <Slide {...properties}>
 
-                  <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[0]})`, height: 500 }}  >
-                      <span ></span>
-                    </div>
-                  </div>
-                  <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[1]})`, height: 500 }}>
-                      <span></span>
-                    </div>
-                  </div>
-                  <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[2]})`, height: 500 }}>
-                      <span></span>
-                    </div>
-                  </div>
-                </Slide>
-                <div>
-            </Col>
+<div className="each-slide">
+  <div style={{ 'backgroundImage': `url(${slideImages[0]})`, height: 900 }}  >
+    <span ></span>
+  </div>
+</div>
+<div className="each-slide">
+  <div style={{ 'backgroundImage': `url(${slideImages[1]})`, height: 900 }}>
+    <span></span>
+  </div>
+</div>
+<div className="each-slide">
+  <div style={{ 'backgroundImage': `url(${slideImages[2]})`, height: 900 }}>
+    <span></span>
+  </div>
+</div>
+</Slide>
+      </div>  
+       </Card>
+
+          </Col>
+            
             </Row>
-
+      
 
               <Row>
                 <Col md={12} xs={12}>
@@ -267,7 +284,7 @@ class Cars extends React.Component {
               <Row>
                 <Col md={12} xs={12}>
                   {this.state.show_tab &&
-                    <Card>
+                    <Card  body className="text-center">
                       <div className="card-content">
                         <CardHeader>
                           <h5 className="title">Cars</h5>
@@ -295,7 +312,7 @@ class Cars extends React.Component {
                             <TabContent activeTab={this.state.activeTab}>
                               <TabPane tabId="1">
                                 <Row>
-                                  <Col sm="6">
+                                  <Col sm="5">
                                     <Card body>
                                       <CardTitle>Honda Civic</CardTitle>
                                       <CardText>40$ per hour</CardText>
@@ -308,7 +325,7 @@ class Cars extends React.Component {
 
                                     </Card>
                                   </Col>
-                                  <Col sm="6">
+                                  <Col sm="5">
                                     <Card body>
                                       <CardTitle>Mazda G8</CardTitle>
                                       <CardText>60$ per hour</CardText>

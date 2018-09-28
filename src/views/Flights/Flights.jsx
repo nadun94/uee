@@ -3,6 +3,10 @@ import classnames from 'classnames';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
+import img_trip from '../../assets/logos/trip.png';
+import img_kaya from '../../assets/logos/Cruise2.png';
+import img_hot from '../../assets/logos/kaya.png';
+
 
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -23,7 +27,7 @@ import {
   CardTitle,
   CardText,
   CardGroup,
-  Form, FormGroup, Input, Label
+  Form, FormGroup,Input,Label,CustomInput
 } from "reactstrap";
 
 
@@ -42,7 +46,8 @@ const properties = {
   duration: 5000,
   transitionDuration: 500,
   infinite: true,
-  indicators: true
+  indicators: true,
+  width:200
 }
 class Flights extends React.Component {
   constructor(props) {
@@ -226,6 +231,15 @@ class Flights extends React.Component {
                       <CardHeader>
                         <h5 className="title">Click on multiple sites to get the lowest prices</h5>
                       </CardHeader>
+                      <FormGroup>
+        
+        <div className="warpper">
+          {/* <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span> */}
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span>
+        </div>
+      </FormGroup>
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                       {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}
                       <Button color="DarkBlack" textcolor="White" size="lg">
@@ -273,17 +287,17 @@ class Flights extends React.Component {
                               <Slide {...properties}>
 
 <div className="each-slide">
-  <div style={{ 'backgroundImage': `url(${slideImages[0]})`, height: 1100 ,width:412}}  >
+  <div style={{ 'backgroundImage': `url(${slideImages[0]})`, height: 300 ,width:400}}  >
     <span ></span>
   </div>
 </div>
 <div className="each-slide">
-  <div style={{ 'backgroundImage': `url(${slideImages[1]})`, height: 500,width:800 }}>
+  <div style={{ 'backgroundImage': `url(${slideImages[1]})`, height: 300,width:400 }}>
     <span></span>
   </div>
 </div>
 <div className="each-slide">
-  <div style={{ 'backgroundImage': `url(${slideImages[2]})`, height: 500,width:800}}>
+  <div style={{ 'backgroundImage': `url(${slideImages[2]})`, height: 300,width:400}}>
     <span></span>
   </div>
 </div>

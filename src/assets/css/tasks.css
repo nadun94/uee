@@ -169,3 +169,11 @@ float: right;
     display: block;
     position: relative; */
 }
+.slide1{
+    padding: 20px;
+    margin: 15px;
+    height: 1300px;
+    width:100%;
+    display: block;
+
+}
