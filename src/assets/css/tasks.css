@@ -152,3 +152,12 @@ float: right;
       height: 700px;
       padding: 10px;
   }
+
+.carlogo{
+    display: flex;
+    margin: 15px;
+}
+.carlogo-size{
+    height: 20px;
+    width: 100px;
+}
