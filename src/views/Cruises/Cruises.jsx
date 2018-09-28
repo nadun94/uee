@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import img_trip from '../../assets/logos/Cruise1.png';
 import img_kaya from '../../assets/logos/Cruise2.png';
 import img_hot from '../../assets/logos/Cruise3.png';
+import cruise1 from '../../assets/img/cruises.jpg';
+import star4 from '../../assets/img/4star.png';
 import {
     Card,
     Button,
@@ -21,19 +23,35 @@ import {
     CardTitle,
     CardText,
     CardGroup,
-    Form, FormGroup,Input,Label,CustomInput
+    Form, FormGroup, Input, Label, CustomInput
 } from "reactstrap";
+import { Slide } from 'react-slideshow-image';
+// import slide1 from './images/slide_cruise.jpg';
+import slide2 from './images/ship.jpg';
+import slide3 from './images/slide_cruise4.jpg';
 
-import { PanelHeader, FormInputs } from "components";
+const slideImages = [
+  slide2, slide3
+];
+const properties = {
+  duration: 5000,
+  transitionDuration: 500,
+  infinite: true,
+  indicators: true
+}
+
+// import { PanelHeader, FormInputs } from "components";
 class Cruises extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             destination: null,
             activeTab: '1',
+            show_tab: false,
         };
         this.handleattributes = this.handleattributes.bind(this);
         this.handleChange = this.handleChange(this);
+        this.selectRates = this.selectRates(this);
 
     }
 
@@ -44,6 +62,11 @@ class Cruises extends React.Component {
     //     })
 
     // }
+
+    selectRates() {
+        console.log('sd');
+        this.setState({ show_tab: true });
+    }
 
     handleattributes({ target }) {
         console.log(target.name);
@@ -56,13 +79,13 @@ class Cruises extends React.Component {
         console.log(target.value);
         console.log('sdf');
         this.setState({
-            destination:''
+            destination: ''
         });
     }
 
-    onclear(){
+    onclear() {
         this.setState({
-            destination:''
+            destination: ''
         });
     }
     toggle(tab) {
@@ -80,6 +103,26 @@ class Cruises extends React.Component {
                 {/* <PanelHeader size="sm" /> */}
                 <div className="container-fluid">
 
+<Row>
+<div className="chart-area">
+                    <div id="slide" >
+                      <Slide {...properties}>
+
+                        <div className="each-slide">
+                          <div style={{ 'backgroundImage': `url(${slideImages[0]})`, height: 400, width: 400}}>
+                            <span></span>
+                          </div>
+                        </div>
+                        <div className="each-slide">
+                          <div style={{ 'backgroundImage': `url(${slideImages[1]})`, height: 500, width: 70}}>
+                            <span></span>
+                          </div>
+                        </div>
+                      </Slide>
+
+                  </div>
+                    </div>
+</Row>
                     <Row>
                         <Col md={12} xs={12}>
                             <CardGroup>
@@ -89,6 +132,7 @@ class Cruises extends React.Component {
                                             <h5 className="title" align="center"> Find the best rental Cruise rates for {this.state.destination} </h5>
                                         </CardHeader>
                                         <CardBody>
+                                        
                                             <form>
                                                 <div className="row">
                                                     <div className="col-md-10  px-5 py-3">
@@ -201,20 +245,20 @@ class Cruises extends React.Component {
                                             </CardHeader>
 
                                             <FormGroup>
-        
-        <div>
-          {/* <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span> */}
-          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip}  alt="fireSpot"/></span>
-          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya}  alt="fireSpot"/></span>
-          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span>
-        </div>
-      </FormGroup>
-                                        
+
+                                                <div>
+                                                    {/* <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span> */}
+                                                    <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip} alt="fireSpot" /></span>
+                                                    <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya} alt="fireSpot" /></span>
+                                                    <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot} alt="fireSpot" /></span>
+                                                </div>
+                                            </FormGroup>
+
                                             {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                                             {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}
-                                            <Button color="primary" size="lg">
+                                            <Button color="primary" size="lg" onClick={this.selectRates}>
                                                 Compare Selected
-                                            </Button>
+                        </Button>
                                         </CardBody>
                                     </div>
                                 </Card>
@@ -224,62 +268,70 @@ class Cruises extends React.Component {
                     </Row>
                     <Row>
                         <Col md={12} xs={12}>
-                            <Card>
-                                <div className="card-content">
-                                    <CardHeader>
-                                        <h5 className="title">Cruises</h5>
-                                    </CardHeader>
-                                    <CardBody>
-                                        <div>
-                                            <Nav tabs>
-                                                <NavItem>
-                                                    <NavLink
-                                                        className={classnames({ active: this.state.activeTab === '1' })}
-                                                        onClick={() => { this.toggle('1'); }}
-                                                    >
-                                                        Tab1
+                            {this.state.show_tab &&
+                                <Card>
+                                    <div className="card-content">
+                                        <CardHeader>
+                                            <h5 className="title">Cruises</h5>
+                                        </CardHeader>
+                                        <CardBody>
+                                            <div>
+                                                <Nav tabs>
+                                                    <NavItem>
+                                                        <NavLink
+                                                            className={classnames({ active: this.state.activeTab === '1' })}
+                                                            onClick={() => { this.toggle('1'); }}
+                                                        >
+                                                            Tab1
                                                     </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink
-                                                        className={classnames({ active: this.state.activeTab === '2' })}
-                                                        onClick={() => { this.toggle('2'); }}
-                                                    >
-                                                        Moar Tabs
+                                                    </NavItem>
+                                                    <NavItem>
+                                                        <NavLink
+                                                            className={classnames({ active: this.state.activeTab === '2' })}
+                                                            onClick={() => { this.toggle('2'); }}
+                                                        >
+                                                            Moar Tabs
                                                     </NavLink>
-                                                </NavItem>
-                                            </Nav>
-                                            <TabContent activeTab={this.state.activeTab}>
-                                                <TabPane tabId="1">
-                                                    <Row>
-                                                        <Col sm="12">
-                                                            <h4>Tab 1 Contents</h4>
-                                                        </Col>
-                                                    </Row>
-                                                </TabPane>
-                                                <TabPane tabId="2">
-                                                    <Row>
-                                                        <Col sm="6">
-                                                            <Card body>
-                                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                                <Button>Go somewhere</Button>
-                                                            </Card>
-                                                        </Col>
-                                                        <Col sm="6">
-                                                            <Card body>
-                                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                                <Button>Go somewhere</Button>
-                                                            </Card>
-                                                        </Col>
-                                                    </Row>
-                                                </TabPane>
-                                            </TabContent>
-                                        </div>
-                                    </CardBody>
-                                </div>
-                            </Card>
+                                                    </NavItem>
+                                                </Nav>
+                                                <TabContent activeTab={this.state.activeTab}>
+                                                    <TabPane tabId="1">
+                                                        <Row>
+                                                            <Col sm="12">
+                                                                <h4>Tab 1 Contents</h4>
+                                                            </Col>
+                                                        </Row>
+                                                    </TabPane>
+                                                    <TabPane tabId="2">
+                                                        <Row>
+                                                            <Col sm="6">
+                                                                <Card body>
+                                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                                    <div className="cars-img">
+                                                                        <img className="carlogo-size" src={cruise1} alt="fireSpot" /> <star4 />
+                                                                    </div>
+                                                                </Card>
+                                                            </Col>
+                                                            <Col sm="6">
+                                                                <Card body>
+                                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                                    <div className="cars-img">
+                                                                        <img className="carlogo-size" src={cruise1} alt="fireSpot" />
+                                                                        <img className="carlogo-size" src={star4} alt="fireSpot" />
+                                                                        <br />
+                                                                    </div>
+                                                                </Card>
+                                                            </Col>
+                                                        </Row>
+                                                    </TabPane>
+                                                </TabContent>
+                                            </div>
+                                        </CardBody>
+                                    </div>
+                                </Card>
+                            }
                         </Col>
                     </Row>
 
