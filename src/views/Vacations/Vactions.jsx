@@ -1,5 +1,12 @@
 import React from "react";
 import classnames from 'classnames';
+import img_autorent from '../../assets/logos/autorentals.png';
+import img_trip from '../../assets/logos/trip.png';
+import img_kaya from '../../assets/logos/kaya.png';
+import img_hot from '../../assets/logos/hot.png';
+import img_hot1 from '../../assets/logos/navo1.png';
+import img_hot2 from '../../assets/logos/navo2.png';
+
 import {
   InputGroup, InputGroupAddon, InputGroupText,
   Card,
@@ -18,7 +25,7 @@ import {
   CardTitle,
   CardText,
   CardGroup,
-  Form, FormGroup,Input,Label
+  Form, FormGroup,Input,Label,CustomInput
 } from "reactstrap";
 import{Container } from "reactstrap";
 class VacationFinder extends React.Component {
@@ -119,6 +126,16 @@ render() {
                                     <CardHeader>
                                         <h5 className="title">Click on multiple sites to get the lowest prices</h5>
                                     </CardHeader>
+
+                                    <div>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot2}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot1}  alt="fireSpot"/></span>
+          {/* <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span> */}
+        </div>
                                 
                                     {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                                     {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}

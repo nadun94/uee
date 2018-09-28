@@ -1,5 +1,9 @@
 import React from "react";
 import classnames from 'classnames';
+// import img_autorent from '../../assets/logos/autorentals.png';
+import img_trip from '../../assets/logos/Cruise1.png';
+import img_kaya from '../../assets/logos/Cruise2.png';
+import img_hot from '../../assets/logos/Cruise3.png';
 import {
     Card,
     Button,
@@ -17,7 +21,7 @@ import {
     CardTitle,
     CardText,
     CardGroup,
-    Form, FormGroup,Input,Label
+    Form, FormGroup,Input,Label,CustomInput
 } from "reactstrap";
 
 import { PanelHeader, FormInputs } from "components";
@@ -195,6 +199,16 @@ class Cruises extends React.Component {
                                             <CardHeader>
                                                 <h5 className="title">Click on multiple sites to get the lowest prices</h5>
                                             </CardHeader>
+
+                                            <FormGroup>
+        
+        <div>
+          {/* <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span> */}
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya}  alt="fireSpot"/></span>
+          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span>
+        </div>
+      </FormGroup>
                                         
                                             {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                                             {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}
