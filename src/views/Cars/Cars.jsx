@@ -28,7 +28,7 @@ import img_kaya from '../../assets/logos/kaya.png';
 import img_hot from '../../assets/logos/hot.png';
 import 'react-datepicker/dist/react-datepicker.css';
 import car1 from '../../assets/img/car1.png';
-
+import car2 from '../../assets/img/car2.png';
 import star4 from '../../assets/img/4star.png';
 
 import { PanelHeader, FormInputs } from "components";
@@ -86,6 +86,12 @@ class Cars extends React.Component {
       <div>
         {/* <PanelHeader size="sm" /> */}
         <div className="container-fluid">
+        <Row>
+            <Col md={12} xs={12}>
+
+            </Col>
+            </Row>
+
 
           <Row>
             <Col md={12} xs={12}>
@@ -266,23 +272,25 @@ class Cars extends React.Component {
                      <TabPane tabId="1">
                        <Row>
                          <Col sm="6">
-                           <Card body>
-                             <CardTitle>Special Title Treatment</CardTitle>
-                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                          <Card body>
+                             <CardTitle>Honda Civic</CardTitle>
+                             <CardText>40$ per hour</CardText>
+                             <CardBody>
                              <div className="cars-img">
-                             <img className="carlogo-size" src={car1} alt="fireSpot" /> <star4 />
+                             <img className="cars-img" src={car1} alt="Card image cap" /> 
+                             {/* <star4 /> */}
                            </div>
+                             </CardBody>
+                            
                            </Card>
                          </Col>
                          <Col sm="6">
                            <Card body>
-                             <CardTitle>Special Title Treatment</CardTitle>
-                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-
-         
+                           <CardTitle>Mazda G8</CardTitle>
+                             <CardText>60$ per hour</CardText>
                              <div className="cars-img">
-                             <img className="carlogo-size" src={car1} alt="fireSpot" />
-                             <img className="carlogo-size" src={star4} alt="fireSpot" />
+                             <img className="cars-img" src={car2}alt="Card image cap" />
+                             {/* <img className="carlogo-size" src={star4} alt="fireSpot" /> */}
                              <br/>
                            </div>
                            
@@ -295,14 +303,14 @@ class Cars extends React.Component {
                      </TabPane>
                      <TabPane tabId="2">
                        <Row>
-                         <Col sm="6">
+                         <Col sm="4">
                            <Card body>
                              <CardTitle>Special Title Treatment</CardTitle>
                              <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                              <Button>Go somewhere</Button>
                            </Card>
                          </Col>
-                         <Col sm="6">
+                         <Col sm="4">
                            <Card body>
                              <CardTitle>Special Title Treatment</CardTitle>
                              <CardText>With supporting text below as a natural lead-in to additional content.</CardText>

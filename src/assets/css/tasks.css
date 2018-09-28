@@ -162,10 +162,10 @@ float: right;
     width: 100px;
 }
 .cars-img{
-    height: 300px;
+    height: 200px;
     width: 400px;
-    padding: 20px;
+    /* padding: 20px;
     margin: 20px;
     display: block;
-    position: relative;
+    position: relative; */
 }
