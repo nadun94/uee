@@ -32,9 +32,10 @@ class Dashboard extends React.Component {
     return (
       
       <div className="wrapper">
-      <div ref="mainPanel">
+       <Header {...this.props} routes={dashboardRoutes} />
+      <div className="main-panel" ref="mainPanel">
        
-        <Header {...this.props} routes={dashboardRoutes} />
+       
           <Switch>
             {dashboardRoutes.map((prop, key) => {
               if (prop.collapse) {

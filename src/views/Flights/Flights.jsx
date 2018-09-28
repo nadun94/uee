@@ -241,7 +241,7 @@ class Supervisor_i5 extends React.Component {
   render() {
     return (
       <div>
-        <PanelHeader size="sm" />
+        {/* <PanelHeader size="sm" /> */}
         <div className="content">
           {/* ********************** Row one *********************** */}
 

@@ -6,7 +6,7 @@ class Diaryview extends React.Component {
     render() {
         return (
             <div>
-                <PanelHeader size="sm" />
+                {/* <PanelHeader size="sm" /> */}
                 <div className="content">
                     <Row>
                         <Col md={8} xs={12}>

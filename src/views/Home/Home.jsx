@@ -23,18 +23,13 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <PanelHeader
-          size="sm" />
+       
         <div className="content">
+        {/* <PanelHeader
+          size="sm" /> */}
           <Row>
             <Col xs={12} md={15}>
-              <Card className="card-chart">
-                <CardHeader>
-                  <CardCategory>Industrial Training Unit</CardCategory>
-                  <CardTitle tag="h4">Internship program management</CardTitle>
-                </CardHeader>
-                <CardBody>
-                  <div className="chart-area">
+            <div className="chart-area">
                     <div id="slide" >
                       <Slide {...properties}>
 
@@ -54,13 +49,24 @@ class Home extends React.Component {
                           </div>
                         </div>
                       </Slide>
-                    </div>
-                    <div><h6>We are a leading non-state degree awarding institute approved by the University Grants Commission (UGC) under the Universities Act. We are also members of the Association of Commonwealth Universities (ACU), as well as the International Association of Universities (IAU), and the first Sri Lankan institute to be accredited by the Institution of Engineering & Technology, UK.
+                      <div><h6>We are a leading non-state degree awarding institute approved by the University Grants Commission
+                      (UGC) under the Universities Act. We are also members of the Association of Commonwealth Universities (ACU), as well as the International Association of Universities (IAU), and the first Sri Lankan institute to be accredited by the Institution of Engineering & Technology, UK.
                 
-We are proud to be listed as a leading and formidable awarding institute authorised and approved by the University Grants Commission (UGC) under the Universities Act, and the International Association of Universities (IAU). Furthermore, not only are we the first Sri Lankan institute to be accredited by the Institution of Engineering & Technology (IET.), UK, our IT degrees are also in turn accredited by the Engineering Council, UK</h6></div>
+We are proud to be listed as a leading and formidable awarding institute authorised and approved by the University 
+Grants Commission (UGC) under the Universities Act, and the International Association of Universities (IAU). Furthermore, 
+not only are we the first Sri Lankan institute to be accredited by the Institution of Engineering & Technology (IET.), UK, our IT degrees are also in turn accredited by the Engineering Council, UK</h6></div>
                   </div>
+                    </div>  
+              {/* <Card className="card-chart">
+                <CardHeader>
+                  <CardCategory>Industrial Training Unit</CardCategory>
+                  <CardTitle tag="h4">Internship program management</CardTitle>
+                </CardHeader>
+                <CardBody>
+  
+                 
                 </CardBody>
-              </Card>
+              </Card> */}
             </Col>
           </Row>
         </div>

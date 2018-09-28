@@ -23,19 +23,19 @@
 
 .sidebar,
 .off-canvas-sidebar{
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 100%;
     bottom: 0;
-    width: 260px;
+    width: 0px;
     left: 0;
     z-index: 1031;
 
     .sidebar-wrapper{
-        position: relative;
+        position: absolute;
         height: calc(100vh - 75px);
         overflow: auto;
-        width: 260px;
+        width: 0px;
         z-index: 4;
         padding-bottom: 100px;
 
@@ -338,12 +338,12 @@
     }
 }
 
-
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7
 .main-panel{
     position: relative;
-    float: right;
-    width: $sidebar-width;
-    // width: 100%;
+    float: left;
+    // width: $sidebar-width;
+    width: 100%;
     background-color: $light-gray;
     background-color: #ebecf1;
 
@@ -352,7 +352,7 @@
     div > .content{
         padding: 0 30px 30px;
         min-height: calc(100vh - 123px);
-        margin-top: -30px;
+        margin-top: 50px;
     }
 
     > .navbar{
@@ -391,7 +391,7 @@
 }
 
 .panel-header {
-  height: 260px;
+  height: 0px;
   padding-top: 80px;
   padding-bottom: 45px;
   position: relative;
@@ -415,9 +415,9 @@
 }
 
 .panel-header-sm{
-  height: 135px;
+  height: 0px;
 }
 
 .panel-header-lg{
-  height: 380px
+  height: 0px
 }
