@@ -17,9 +17,9 @@ import {
   CardTitle,
   CardText,
   CardGroup,
-  FormGroup, Input, Label,Form,CustomInput
+  FormGroup, Input, Label, Form, CustomInput
 } from "reactstrap";
-import { Tasks} from "components";
+import { Tasks } from "components";
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import img_autorent from '../../assets/logos/autorentals.png';
@@ -27,6 +27,9 @@ import img_trip from '../../assets/logos/trip.png';
 import img_kaya from '../../assets/logos/kaya.png';
 import img_hot from '../../assets/logos/hot.png';
 import 'react-datepicker/dist/react-datepicker.css';
+import car1 from '../../assets/img/car1.png';
+
+import star4 from '../../assets/img/4star.png';
 
 import { PanelHeader, FormInputs } from "components";
 class Cars extends React.Component {
@@ -36,11 +39,13 @@ class Cars extends React.Component {
     this.state = {
       city: 'Colombo',
       activeTab: '1',
-      startDate: moment()
+      startDate: moment(),
+      show_tab: false,
     };
     //this.handleDate = this.handleDate.bind(this);
     this.handleattributes = this.handleattributes.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.selectRates = this.selectRates.bind(this);
     // this.clear=this.clear.bind(this);
     // this.check=this.check.bind(this);
     // checkerror=this.checkerror.bind(this);
@@ -72,7 +77,9 @@ class Cars extends React.Component {
       });
     }
   }
-
+  selectRates() {
+    this.setState({ show_tab: true });
+  }
   //render start******************************************************
   render() {
     return (
@@ -184,7 +191,7 @@ class Cars extends React.Component {
 
                         <ButtonGroup className="pull-right">
 
-                          <Button color="secondary" size="lg" onClick={this.clear}>
+                          <Button outline color="primary" size="lg" onClick={this.clear}>
                             Clear
                         </Button>
                         </ButtonGroup>
@@ -200,24 +207,24 @@ class Cars extends React.Component {
                 </Card>
                 <Card>
                   <div className="card-content">
-                  <CardHeader>
-                        <h5 className="title">Click on multiple sites to get the lowest prices</h5>
-                      </CardHeader>
+                    <CardHeader>
+                      <h5 className="title">Click on multiple sites to get the lowest prices</h5>
+                    </CardHeader>
                     <CardBody>
-                      
+
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                       {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}
 
-        <FormGroup>
-        
-          <div>
-            <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent}  alt="fireSpot"/></span>
-            <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip}  alt="fireSpot"/></span>
-            <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya}  alt="fireSpot"/></span>
-            <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot}  alt="fireSpot"/></span>
-          </div>
-        </FormGroup>
-                      <Button color="primary" size="lg">
+                      <FormGroup>
+
+                        <div>
+                          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_autorent} alt="fireSpot" /></span>
+                          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_trip} alt="fireSpot" /></span>
+                          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_kaya} alt="fireSpot" /></span>
+                          <span className="carlogo"> <CustomInput type="checkbox" id="exampleCustomCheckbox" size="lg" /><img className="carlogo-size" src={img_hot} alt="fireSpot" /></span>
+                        </div>
+                      </FormGroup>
+                      <Button color="primary" size="lg" onClick={this.selectRates}>
                         Compare Selected
                         </Button>
                     </CardBody>
@@ -229,62 +236,87 @@ class Cars extends React.Component {
           </Row>
           <Row>
             <Col md={12} xs={12}>
-              <Card>
-                <div className="card-content">
-                  <CardHeader>
-                    <h5 className="title">Cars</h5>
-                  </CardHeader>
-                  <CardBody>
-                    <div>
-                      <Nav tabs>
-                        <NavItem>
-                          <NavLink
-                            className={classnames({ active: this.state.activeTab === '1' })}
-                            onClick={() => { this.toggle('1'); }}
-                          >
-                            Tab1
-            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink
-                            className={classnames({ active: this.state.activeTab === '2' })}
-                            onClick={() => { this.toggle('2'); }}
-                          >
-                            Moar Tabs
-            </NavLink>
-                        </NavItem>
-                      </Nav>
-                      <TabContent activeTab={this.state.activeTab}>
-                        <TabPane tabId="1">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Tab 1 Contents</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="2">
-                          <Row>
-                            <Col sm="6">
-                              <Card body>
-                                <CardTitle>Special Title Treatment</CardTitle>
-                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                <Button>Go somewhere</Button>
-                              </Card>
-                            </Col>
-                            <Col sm="6">
-                              <Card body>
-                                <CardTitle>Special Title Treatment</CardTitle>
-                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                <Button>Go somewhere</Button>
-                              </Card>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                      </TabContent>
-                    </div>
-                  </CardBody>
-                </div>
-              </Card>
+             {this.state.show_tab && 
+             <Card>
+             <div className="card-content">
+               <CardHeader>
+                 <h5 className="title">Cars</h5>
+               </CardHeader>
+               <CardBody>
+                 <div>
+                   <Nav tabs>
+                     <NavItem>
+                       <NavLink
+                         className={classnames({ active: this.state.activeTab === '1' })}
+                         onClick={() => { this.toggle('1'); }}
+                       >
+                         AutoRentals
+         </NavLink>
+                     </NavItem>
+                     {/* <NavItem>
+                       <NavLink
+                         className={classnames({ active: this.state.activeTab === '2' })}
+                         onClick={() => { this.toggle('2'); }}
+                       >
+                         Moar Tabs
+         </NavLink>
+                     </NavItem> */}
+                   </Nav>
+                   <TabContent activeTab={this.state.activeTab}>
+                     <TabPane tabId="1">
+                       <Row>
+                         <Col sm="6">
+                           <Card body>
+                             <CardTitle>Special Title Treatment</CardTitle>
+                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                             <div className="cars-img">
+                             <img className="carlogo-size" src={car1} alt="fireSpot" /> <star4 />
+                           </div>
+                           </Card>
+                         </Col>
+                         <Col sm="6">
+                           <Card body>
+                             <CardTitle>Special Title Treatment</CardTitle>
+                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+
+         
+                             <div className="cars-img">
+                             <img className="carlogo-size" src={car1} alt="fireSpot" />
+                             <img className="carlogo-size" src={star4} alt="fireSpot" />
+                             <br/>
+                           </div>
+                           
+        
+                        
+                           </Card>
+                         </Col>
+                       </Row>
+                     
+                     </TabPane>
+                     <TabPane tabId="2">
+                       <Row>
+                         <Col sm="6">
+                           <Card body>
+                             <CardTitle>Special Title Treatment</CardTitle>
+                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                             <Button>Go somewhere</Button>
+                           </Card>
+                         </Col>
+                         <Col sm="6">
+                           <Card body>
+                             <CardTitle>Special Title Treatment</CardTitle>
+                             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                             <Button>Go somewhere</Button>
+                           </Card>
+                         </Col>
+                       </Row>
+                     </TabPane>
+                   </TabContent>
+                 </div>
+               </CardBody>
+             </div>
+           </Card>
+          }
             </Col>
           </Row>
 
