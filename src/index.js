@@ -6,6 +6,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "assets/scss/now-ui-dashboard.css";
 import "assets/css/demo.css";
+import "assets/css/tasks.css";
 import Login from "./views/Login/Login";
 import indexRoutes from "routes/index.jsx";
 

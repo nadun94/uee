@@ -16,13 +16,12 @@ import {
   Badge,
   CardTitle,
   CardText,
-  CardGroup
+  CardGroup,
+  Form, FormGroup,Input,Label
 } from "reactstrap";
 
 import { PanelHeader, FormInputs } from "components";
-//import { Button } from 'reactstrap';
-//import FormGroup from "../../../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/reactstrap/lib/FormGroup";
-class fillform_1 extends React.Component {
+class Cars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,22 +63,23 @@ class fillform_1 extends React.Component {
     return (
       <div>
         {/* <PanelHeader size="sm" /> */}
-        <div className="content">
+        <div className="container-fluid">
 
           <Row>
             <Col md={12} xs={12}>
               <CardGroup>
                 <Card>
-                  <CardHeader>
+                <div className="card-content">
+                <CardHeader>
                     <h5 className="title"> Find the best rental car rates in {this.state.city} </h5>
                   </CardHeader>
                   <CardBody>
                     <form>
                       <FormInputs
                         ncols={[
-                          "col-md-5 pr-1",
-                          "col-md-3 px-1",
-                          "col-md-4 pl-1"
+                          "col-md-5 px-5 py-3",
+                          "col-md-5 px-5 py-3"
+                       
                         ]}
                         proprieties={[
                           {
@@ -107,23 +107,34 @@ class fillform_1 extends React.Component {
                               value: this.state.stdname,
                               onChange: this.handleattributes
                             }
-                          },
-                          {
-                            label: "address",
-                            inputProps: {
-                              type: "address",
-                              placeholder: "address",
-                              name: "address",
-                              value: this.state.address,
-                              onChange: this.handleattributes
-                            }
                           }
                         ]}
                       />
+                     <div className="row">
+                        <div className="col-md-5  px-5 py-3">
+                        <FormGroup>
+          <Label for="exampleSelect">Select</Label>
+          <Input type="select" name="select" id="exampleSelect">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </Input>
+        </FormGroup>
+                        </div>
+                        <div className="col-md-5  px-5 py-3">
+                        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+        </FormGroup>
+        </div>
+        </div>
+                   
 
                       <FormInputs
 
-                        ncols={["col-md-6 pr-1", "col-md-6 pl-1"]}
+                        ncols={["col-md-5  px-5 py-3", "col-md-5 px-5 py-3"]}
                         proprieties={[
                           {
                             label: "home phone number",
@@ -164,16 +175,21 @@ class fillform_1 extends React.Component {
                     </form>
 
                   </CardBody>
+                  </div>
                 </Card>
                 <Card>
+                <div className="card-content">
                   <CardBody>
-                    <CardTitle>Card title</CardTitle>
+                  <CardHeader>
+                  <h5 className="title">Click on multiple sites to get the lowest prices</h5>
+                </CardHeader>
                     {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                    <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+                    {/* <CardText>This is a wider card with supporting text below as a natural lead-in to additional content.</CardText> */}
                     <Button color="primary" size="lg">
                      Compare Selected
                         </Button>
                   </CardBody>
+                  </div>
                 </Card>
               </CardGroup>
 
@@ -182,6 +198,7 @@ class fillform_1 extends React.Component {
           <Row>
             <Col md={12} xs={12}>
               <Card>
+              <div className="card-content">
                 <CardHeader>
                   <h5 className="title">Cars</h5>
                 </CardHeader>
@@ -234,6 +251,7 @@ class fillform_1 extends React.Component {
                     </TabContent>
                   </div>
                 </CardBody>
+                </div>
               </Card>
             </Col>
           </Row>
@@ -244,4 +262,4 @@ class fillform_1 extends React.Component {
   }
 }
 
-export default fillform_1;
+export default Cars;

@@ -1236,7 +1236,10 @@ p.description {
   font-size: 1.14em; }
 
 .title {
-  font-weight: 700; }
+  font-weight: 600; 
+  text-align: center;
+  font-size: 2em;
+}
   .title.title-up {
     text-transform: uppercase; }
     .title.title-up a {
