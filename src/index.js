@@ -9,7 +9,6 @@ import "assets/css/demo.css";
 import "assets/css/tasks.css";
 import Login from "./views/Login/Login";
 import indexRoutes from "routes/index.jsx";
-
 const hist = createBrowserHistory();
 
 function checkLogin() {
@@ -21,7 +20,7 @@ function checkLogin() {
         {indexRoutes.map((prop, key) => {
           return (
            <div>
-              {/* <Redirect to="/login" /> */}
+              {/* <Redirect to="/" /> */}
             <Route path={prop.path} key={key} component={prop.component} />
             </div>
           );
